@@ -1,0 +1,191 @@
+CASE 1
+
+Door sensor has been registered with ID: 1
+Temperature sensor has been registered with ID: 2
+Motion sensor has been registered with ID: 3
+Presence sensor has been registered with ID: 4
+Smart bulb has been registered with ID: 5
+Smart outlet has been registered with ID: 6
+Gateway processing tier has been registered with ID: 8
+Gateway database tier has been registered with ID: 7
+User has been registered with ID: 0
+All processes have been registered.
+ELECTION DONE: Leader is  Gateway processing tier
+Started Clock Sync Thread. Starting events...
+Events >>  ['D', '2', 'P', 'D', '1', 'M', '2', 'O1', '1', 'T', '2', 'D', '1', 'M', 'D']
+
+Event 1: Door tried to be opened, informing gateway.
+Storing event on database
+Updating Device ID 1 state on State Database to DOOR-OPEN
+GATEWAY: ALERT! Intruder opened door without presence sensor Ring Alarm 
+Gateway controlling the state of smart appliances
+Event 2: Bulb turned on by the gateway.
+Updating Device ID 1 state on State Database to DOOR-CLOSED
+Storing event on database
+Updating Device ID 5 state on State Database to ON
+Event 3: Beacon presence sensed
+Storing event on database
+Updating Device ID 4 state on State Database to True
+Event 4: Door tried to be opened, informing gateway.
+Storing event on database
+Updating Device ID 1 state on State Database to DOOR-OPEN
+GATEWAY: User has just entered the home with presence. Turning off the security system.
+Updating Device ID 1 state on State Database to DOOR-CLOSED
+Event 5: Sensor has sensed motion.
+Storing event on database
+Updating Device ID 3 state on State Database to MOTION-ON
+pulling data from the sensors
+Responding the bulb state to the gateway.
+Smart Bulb is ON at time 4
+Updating Device ID 3 state on State Database to MOTION-OFF
+Event 6: User plugged in a device to the outlet.
+Storing event on database
+Updating Device ID 6 state on State Database to ON
+pulling data from the sensors
+Event 7: Responding the temperature value to the gateway.
+The current temperature is 21 at time 7
+Temp is 21 - sensed by Gateway
+Event 8: Door tried to be opened, informing gateway.
+Storing event on database
+Updating Device ID 1 state on State Database to DOOR-OPEN
+GATEWAY: ALERT! Intruder opened door without presence sensor Ring Alarm 
+Gateway controlling the state of smart appliances
+Event 9: Bulb turned on by the gateway.
+Updating Device ID 1 state on State Database to DOOR-CLOSED
+Storing event on database
+Updating Device ID 5 state on State Database to ON
+Event 10: Sensor has sensed motion.
+Storing event on database
+Updating Device ID 3 state on State Database to MOTION-ON
+pulling data from the sensors
+Responding the bulb state to the gateway.
+Smart Bulb is ON at time 10
+Updating Device ID 3 state on State Database to MOTION-OFF
+Event 11: Door tried to be opened, informing gateway.
+Storing event on database
+Updating Device ID 1 state on State Database to DOOR-OPEN
+GATEWAY: User is leaving the home. Turning on the security system and turn off lights.
+Gateway controlling the state of smart appliances
+Event 12: Bulb turned off by the gateway.
+Updating Device ID 1 state on State Database to DOOR-CLOSED
+Storing event on database
+Updating Device ID 5 state on State Database to OFF
+
+
+
+===================================
+CASE 2
+
+Door sensor has been registered with ID: 1
+Temperature sensor has been registered with ID: 2
+Motion sensor has been registered with ID: 3
+Presence sensor has been registered with ID: 4
+Smart bulb has been registered with ID: 5
+Smart outlet has been registered with ID: 6
+Gateway processing tier has been registered with ID: 8
+Gateway database tier has been registered with ID: 7
+User has been registered with ID: 0
+All processes have been registered.
+ELECTION DONE: Leader is  Gateway processing tier
+Started Clock Sync Thread. Starting events...
+
+Events >>  ['T', 'D', '2', 'M', 'D', '1', 'P', 'D', '1', 'M', '1', 'B0']
+pulling data from the sensors
+Event 1: Responding the temperature value to the gateway.
+The current temperature is 27 at time 1
+Temp is 27 - sensed by Gateway
+Event 2: Door tried to be opened, informing gateway.
+Storing event on database
+Updating Device ID 1 state on State Database to DOOR-OPEN
+GATEWAY: ALERT! Intruder opened door without presence sensor Ring Alarm 
+Gateway controlling the state of smart appliances
+Event 3: Bulb turned on by the gateway.
+Updating Device ID 1 state on State Database to DOOR-CLOSED
+Storing event on database
+Updating Device ID 5 state on State Database to ON
+Event 4: Sensor has sensed motion.
+Storing event on database
+Updating Device ID 3 state on State Database to MOTION-ON
+pulling data from the sensors
+Responding the bulb state to the gateway.
+Smart Bulb is ON at time 4
+Updating Device ID 3 state on State Database to MOTION-OFF
+Event 5: Door tried to be opened, informing gateway.
+Storing event on database
+Updating Device ID 1 state on State Database to DOOR-OPEN
+Updating Device ID 1 state on State Database to DOOR-CLOSED
+GATEWAY: User is leaving the home. Turning on the security system and turn off lights.
+Gateway controlling the state of smart appliances
+Event 6: Bulb turned off by the gateway.
+Storing event on database
+Updating Device ID 5 state on State Database to OFF
+Event 7: Beacon presence sensed
+Storing event on database
+Updating Device ID 4 state on State Database to True
+Event 8: Door tried to be opened, informing gateway.
+Storing event on database
+Updating Device ID 1 state on State Database to DOOR-OPEN
+GATEWAY: User has just entered the home with presence. Turning off the security system.
+Updating Device ID 1 state on State Database to DOOR-CLOSED
+Event 9: Sensor has sensed motion.
+Storing event on database
+Updating Device ID 3 state on State Database to MOTION-ON
+pulling data from the sensors
+Responding the bulb state to the gateway.
+Smart Bulb is OFF at time 8
+GATEWAY: Turn on Lights due to Motion
+Gateway controlling the state of smart appliances
+Event 10: Bulb turned on by the gateway.
+Updating Device ID 3 state on State Database to MOTION-OFF
+Storing event on database
+Updating Device ID 5 state on State Database to ON
+Event 11: User turned off the bulb.
+Storing event on database
+Updating Device ID 5 state on State Database to OFF
+=====================
+CASE 3
+
+Door sensor has been registered with ID: 1
+Temperature sensor has been registered with ID: 2
+Motion sensor has been registered with ID: 3
+Presence sensor has been registered with ID: 4
+Smart bulb has been registered with ID: 5
+Smart outlet has been registered with ID: 6
+Gateway processing tier has been registered with ID: 8
+Gateway database tier has been registered with ID: 7
+User has been registered with ID: 0
+All processes have been registered.
+ELECTION DONE: Leader is  Gateway processing tier
+Started Clock Sync Thread. Starting events...
+Events >>  ['M', '1', 'P', 'D', '1', 'M', '1', 'B0']
+
+Event 1: Sensor has sensed motion.
+Storing event on database
+Updating Device ID 3 state on State Database to MOTION-ON
+GATEWAY: ALERT! Motion when house empty - ringing alarms
+Updating Device ID 3 state on State Database to MOTION-OFF
+Event 2: Beacon presence sensed
+Storing event on database
+Updating Device ID 4 state on State Database to True
+Event 3: Door tried to be opened, informing gateway.
+Storing event on database
+Updating Device ID 1 state on State Database to DOOR-OPEN
+GATEWAY: User has just entered the home with presence. Turning off the security system.
+Updating Device ID 1 state on State Database to DOOR-CLOSED
+Event 4: Sensor has sensed motion.
+Storing event on database
+Updating Device ID 3 state on State Database to MOTION-ON
+pulling data from the sensors
+Responding the bulb state to the gateway.
+Smart Bulb is OFF at time 3
+GATEWAY: Turn on Lights due to Motion
+Gateway controlling the state of smart appliances
+Event 5: Bulb turned on by the gateway.
+Updating Device ID 3 state on State Database to MOTION-OFF
+Storing event on database
+Updating Device ID 5 state on State Database to ON
+Event 6: User turned off the bulb.
+Storing event on database
+Updating Device ID 5 state on State Database to OFF
+
+

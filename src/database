@@ -1,0 +1,6 @@
+3, MOTION-ON, 1
+4, True, 2
+1, DOOR-OPEN, 3
+3, MOTION-ON, 4
+5, ON, 5
+5, OFF, 6

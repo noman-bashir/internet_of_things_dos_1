@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{siunitx}
+ 
+\begin{document}
+
+ 
+\title{Internet of Things - Smart Home Edition}%replace X with the appropriate number
+\author{Noman Bashir, Shubham Mukherjee}
+\maketitle
+
+\section{Latency Results}
+In this section we describe the methodology and results for the latency evaluations
+for the major functions of each of system components. We use Python's cProfile 
+module to compute the latency of each function. 
+
+\begin{itemize}
+	\item One the major functions of the 
+	gateway tier is to initialize the election and subsequently set a node as a leader. The 
+	time required to  run the init\_election() test is \textbf{2.043 seconds}. 
+	
+	\item The next major function is the poll clock. Although, this test time is included in the previous test as it runs at the end of leader election as well and the time taken is \textbf{0.005 seconds}.
+	
+	\item The event order function is the heart of the gateway processing tier and it takes only \textbf{0.026 seconds} to process a message. 
+	
+	\item It takes only \textbf{0.004 seconds} to send a control message to a particular smart device from the gateway. 
+	
+	\item It takes only \textbf{0.009 seconds} to retrieve the state of a particular device from the 
+	database. Retrieving the last entry of the file takes \textbf{0.008 seconds}.
+	
+	\item It takes \textbf{0.011 seconds} to query the state of a particular devices from the gateway processing tier.
+	
+	\item The insert(msg) function at the database tier of the takes \textbf{0.005 seconds} to store the value at the last line of the database file. 
+	
+\end{itemize}
+
+
+
+\section{Test Case 1}
+This test case attempts to assess the program for against the burglar attempting to 
+enter the home while the home is empty and occupied. For this test case, we need to \textbf{set the initialHomeState variable inside the config file to empty}. The sequence of events for this 
+test case is described as follows:
+
+\begin{itemize}
+	\item[1.] In the initial state of the home user is outside, security system is On, and bulb is Off.
+	
+	\item[2.] The burglar process attempts to enter the house. The door should not open and security system should start ringing the alarm. 
+	
+	\item[3.] User with valid ID attempts to open the door, access is granted, and security system is turned off. 
+	
+	\item[4.] The motion sensor is triggered by the user and home automation system turns on the bulb. 
+	
+	\item[5.] User turns on the power outlet to put his/her cellphone on charging. The gateway 
+	process also fetches temperature value from the sensor.
+	
+	\item[6.] The burglar attempts to gain the access again. The access is not granted even if the security system is Off but the alarm go off. 
+	
+	\item[7.] User goes out to watch what's happening. In this process, he triggers the motion 
+	sensor and the door sensor. The user has gone outside now. 
+	
+	\item[8.] The bulb inside the home is turned off and security system is turned on. 
+	
+\end{itemize}
+
+
+\section{Test Case 2}
+
+This test case attempts to assess the function of program when user is inside the home at starting state, attempts to control the bulb, and working of temperature sensor. For this test case, we need to \textbf{set the initialHomeState variable inside the config file to occupied}. The sequence of events for this test case is described as follows:
+
+\begin{itemize}
+	\item[1.] In the initial state of the home user is inside, security system is Off, and bulb is Off. We assume that the user is sleeping.
+	
+	\item[2.] The gateway fetches the temperature reading from the temperature sensor. 
+	
+	\item[3.] The burglar process attempts to enter the house. The door should not open and security system should start ringing the alarm. 
+	
+	\item[4.] User wakes up which triggers the motion sensor and home automation
+	system turns on the bulb.
+	
+	\item[5.] User goes out to watch what's happening. In this process, he triggers the motion 
+	sensor and the door sensor. The user has gone outside now. 
+	
+	\item[6.] The bulb inside the home is turned off and security system is turned on. 
+	
+	\item[7.] User comes back in now, security system is turned off, bulb is turned on. 
+	
+	\item[8.] User turns off the bulb and goes to sleep. 
+	
+\end{itemize}
+
+\section{Test Case 3}
+
+This test case attempts to evaluate the system in a situation where the home is unoccupied
+but there is some motion sensed. In this scenario, alarms should go off indicating a burglar in the house. For this test case, we need to \textbf{set the initialHomeState variable inside the config file to empty}. The sequence of events for this test case is described as follows:
+
+\begin{itemize}
+	\item[1.] In the initial state of the home user is outside, security system is On, and bulb is Off.
+	
+	\item[2.] The motion sensor is triggered which sets off the alarm indicating an intruder/burglar.
+	
+	\item[3.] User enters using keychain sensor and after coming in turns of the bulb.
+\end{itemize}
+
+\section{Test Output}
+
+The output of these test cases is stored in /test/test\_output.txt for better readability. 
+
+
+
+\end{document}
