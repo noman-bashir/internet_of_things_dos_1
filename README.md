@@ -1,10 +1,3 @@
-# spring17-lab2
-Names and emails of students working on the project:
-
-Student 1: Noman Bashir (nbashir@umass.edu)
-
-Student 2: Shubham Mukherjee (shubhammukhe@umass.edu)
-
 # How to Run
 
 Note: A pre-req is Pyro4 installed in any standard Linux machine
